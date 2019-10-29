@@ -1,0 +1,95 @@
+<head>
+  <title>Baobao de Xiaoyouxi</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="tt">
+    <h1>^_^ The little game to have fun and kill time ^_^</h1>
+  </div>
+  <div class="container">
+  <div class="row">
+    <div class="col-sm slot">
+      <div id="slotOne">
+      </div>
+    </div>
+    <div class="col-sm slot">
+      <div id="slotTwo">
+      </div>
+    </div>
+    <div class="col-sm slot">
+      <div id="slotThree">
+      </div>
+    </div>
+  </div>
+  <!-- <div>
+    Number of running times: <input type="number" id="myNumber" value="">
+  </div> -->
+  <div class="row">
+    <div class="col-sm" id="stats">
+      <p><strong>Credits: </strong><span id="credits"></span></p>
+      <p><strong>Plays: </strong><span id="plays"></span></p>
+      <p><strong>Wins: </strong><span id="wins"></span></p>
+    <button class="btn btn-primary" id="play">
+      PLAY
+    </button>
+    </div>
+  </div>
+  <span style="font-size:500%;color:red;">&hearts;</span>
+
+
+
+<script>
+  var credits = 50;
+  var plays = 0;
+  var wins = 0;
+
+  function renderStats(){
+    document.getElementById("credits").innerHTML = credits;
+    document.getElementById("plays").innerHTML = plays;
+    document.getElementById("wins").innerHTML = wins;
+  }
+
+  renderStats();
+
+  //var x = document.getElementById("myNumber").value;
+  //console.log(x);
+  //for(i=0; i< x+1; i++){
+  //  playSlots();
+  //}
+
+
+  document.getElementById("play").addEventListener("click", playSlots);
+  function playSlots() {
+    if(credits<0){
+      alert("Refresh the page and try again :)");
+      return;
+    }
+    var one = Math.floor(Math.random() * 5);
+    var two = Math.floor(Math.random() * 5);
+    var three = Math.floor(Math.random() * 5);
+    var fruit = ["apple", "banana", "cherry", "strawberry", "watermelon"];
+    var fruitOne = fruit[one];
+    var fruitTwo = fruit[two];
+    var fruitThree = fruit[three];
+
+    document.getElementById('slotOne').classList = fruitOne;
+    document.getElementById('slotTwo').classList = fruitTwo;
+    document.getElementById('slotThree').classList = fruitThree;
+    if(one==two && two==three){
+    credits += 20;
+    wins += 1;
+    if(fruit[one]=="cherry"){
+      credits += 10;
+    }
+    alert("Congratulations! Baobao won! Mua!");
+    }
+    else{
+     credits = credits - 1;
+    }
+    plays += 1;
+    renderStats();
+    }
+</script>
+
+</body>

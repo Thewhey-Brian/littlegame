@@ -1,0 +1,45 @@
+.tt{
+  text-align: center;
+}
+.slot {
+  border: 3px solid gray;
+  height: 300px;
+  margin: 20px;
+}
+
+.slot div {
+  height: 100%;
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.apple {
+  background-image: url('https://cse204.s3.amazonaws.com/apple-icon.png')
+}
+
+.banana {
+  background-image: url('https://cse204.s3.amazonaws.com/banana-icon.png')
+}
+
+.cherry {
+  background-image: url('https://cse204.s3.amazonaws.com/cherry-icon.png')
+}
+
+.strawberry {
+  background-image: url('https://cse204.s3.amazonaws.com/strawberry-icon.png')
+}
+
+.watermelon {
+  background-image: url('https://cse204.s3.amazonaws.com/watermelon-icon.png')
+}
+
+#stats p {
+  float: left;
+  margin-right: 20px !important;
+}
+
+div h2 {
+  margin-top: 20px;
+  display: block;
+}
